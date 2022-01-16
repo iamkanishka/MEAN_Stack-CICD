@@ -7,9 +7,9 @@ const path = require("path");
 
 let app = express();
 
-var distDir = __dirname + "/../dist/dockersample/index.html";
+var distDir = __dirname + "/myapp/dist/dockersample/index.html";
 app.use(express.static(distDir));
-app.use(express.static(path.join(__dirname, "/../dist/dockersample/")));
+app.use(express.static(path.join(__dirname, "/myapp/dist/dockersample/")));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
