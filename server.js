@@ -7,9 +7,9 @@ const path = require("path");
 
 let app = express();
 
-var distDir = __dirname + "/myapp/dist/dockersample/index.html";
+var distDir = __dirname + "/frontapp/dist/frontapp/index.html";
 app.use(express.static(distDir));
-app.use(express.static(path.join(__dirname, "/myapp/dist/dockersample/")));
+app.use(express.static(path.join(__dirname, "/frontapp/dist/frontapp/")));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -29,7 +29,7 @@ app.get("/code", function (req, res) {
   });
 
 app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "/../dist/dockersample/index.html"));
+  res.sendFile(path.join(__dirname, "/../dist/frontapp/index.html"));
 });
 
 

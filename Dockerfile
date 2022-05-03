@@ -4,11 +4,11 @@ FROM node:alpine3.12 as client
 
 WORKDIR /usr/app/client/
 
-COPY myapp/package*.json ./
+COPY frontapp/package*.json ./
 
 RUN npm install
 
-COPY myapp/ ./
+COPY frontapp/ ./
 
 RUN ls
 
@@ -33,7 +33,7 @@ FROM node:alpine3.12
 
 WORKDIR /usr/src/app/
 
-COPY --from=client /usr/app/client/build/ ./client/build/
+COPY --from=client /usr/app/client/dist ./frontapp/dist
 
 WORKDIR /usr/src/app/
 
