@@ -18,22 +18,10 @@ RUN npm run build
 
 FROM node:alpine3.12
 
-# RUN apk add --no-cache \
-#     chromium \
-#     nss \
-#     freetype \
-#     harfbuzz \
-#     ca-certificates \
-#     ttf-freefont \
-#     nodejs \
-#     yarn
-
-# ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-#     PUPPETEER_EXECUTABLE_PATH=/usr/src/app/bin/chromium-browser
 
 WORKDIR /usr/src/app/
 
-COPY --from=client /usr/app/client/dist ./frontapp/dist
+COPY --from=client /usr/app/client/dist/frontapp ./frontapp/dist/frontapp
 
 WORKDIR /usr/src/app/
 
