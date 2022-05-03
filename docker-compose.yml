@@ -1,7 +1,7 @@
 version: "3.8"
 services:
-  gys_app:
-    container_name: GYSContainer
+  meancicd_app:
+    container_name: MeanCICD
     build: .
     restart: always
     ports:
