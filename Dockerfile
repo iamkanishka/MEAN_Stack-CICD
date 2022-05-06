@@ -21,7 +21,7 @@ FROM node:alpine3.12
 
 WORKDIR /usr/src/app/
 
-COPY --from=client /usr/app/client/dist/frontapp ./frontapp/dist/frontapp
+COPY --from=client /usr/app/client/dist ./frontapp/dist
 
 WORKDIR /usr/src/app/
 
