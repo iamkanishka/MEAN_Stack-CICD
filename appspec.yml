@@ -5,9 +5,9 @@ files:
     destination: /home/ec2-user/MeanStackCICD
 hooks:
   ApplicationStop:
-    - location: scripts/application_stop.sh
-      timeout: 300
-      runas: ec2-user
+  #  - location: scripts/application_stop.sh
+  #    timeout: 300
+  #    runas: ec2-user
   AfterInstall:
     - location: scripts/setup.sh
       timeout: 300
